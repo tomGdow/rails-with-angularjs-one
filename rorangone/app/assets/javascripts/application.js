@@ -12,5 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+
+//= require angular/vendor/angular-route
+//= require angular/vendor/angular-sanitize
+//= require angular/ng_controllers
+//= require angular/ng_directives
+//= require angular/ng_filters
+//= require angular/ng_routes
+//= require angular/ng_services
+
