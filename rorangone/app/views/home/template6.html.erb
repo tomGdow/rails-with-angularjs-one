@@ -1,5 +1,9 @@
 <div class="template">
-  <h2>{{ct6.templateTitle}}</h2>
+  <p>Current Product Id: {{ct6.currentId}}</p>
   <p>{{ct6.message}} </p> 
+  <div  ng-bind-html="ct6.editproduct" ></div>
   <div ng-include="'/home/infong.html'"></div>
+  <ul>
+    <li>Find my Rails controller in /app/controllers/products_controller.rb </li>
+  </ul>
 </div> 

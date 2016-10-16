@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en"  ng-app="myApp">
 	<head>
 		<meta charset="UTF-8">
-		<title>Rails-Angular-One</title>
+		<title>Rails With AngularJS</title>
 		<%= csrf_meta_tags %>
 
 		<%= stylesheet_link_tag 'application', media: 'all' %>
@@ -15,6 +15,7 @@
 	<body ng-controller="MyNavCtrl as ctnav">
 		<div ng-include="'/home/navbar.html'"></div>
 		<h1>Home Page</h1>
+		<p id="flash" class="flash">&nbsp;</p>
 		<ul>
 			<li>Find me in app/views/home/index.html.erb</li>
 			<li>Find my Rails controller in /app/controllers/home_controller.rb </li>

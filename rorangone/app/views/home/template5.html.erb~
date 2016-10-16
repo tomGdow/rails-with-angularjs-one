@@ -1,6 +1,30 @@
 <div class="template">
   <p>Current Product Id: {{ct5.currentId}}</p>
   <p>{{ct5.message}} </p> 
-  <div ng-include="'/home/infong.html'"></div>
+  <div  ng-bind-html="ct5.showproduct" ></div>
 </div> 
 
+
+
+<p>
+  <strong>Name:</strong>
+ {{ct5.showproductjson.name}}
+</p>
+
+<p>
+  <strong>Description:</strong>
+  {{ct5.showproductjson.description}}
+</p>
+
+<p>
+  <strong>Price:</strong>
+  {{ct5.showproductjson.price}} 
+</p>
+
+  <ul>
+    <li>Find me (template) in /app/views/home/template5.html.erb</li>
+    <li>Find my Angular controller (MyCtrl5 as ct5) in
+      /app/assets/javascripts/angular/ng_controllers.js</li>
+    <li>Find my Angular route in
+      /app/assets/javascripts/angular/ng_routes.js.erb</li>
+  </ul>

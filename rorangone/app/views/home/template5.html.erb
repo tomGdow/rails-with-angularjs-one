@@ -1,5 +1,28 @@
 <div class="template">
-  <h2>{{ct5.templateTitle}}</h2>
+  <p>Current Product Id: {{ct5.currentId}}</p>
   <p>{{ct5.message}} </p> 
+  <h3>Hello, I have been retrieved by Ajax as HTML</h3>
+  <div  ng-bind-html="ct5.showproduct" ></div>
+
+  <h3>Hello, I have been retrieved by Ajax as JSON</h3>
+  <p>
+  <strong>Name:</strong>
+  {{ct5.showproductjson.name}}
+  </p>
+
+  <p>
+  <strong>Description:</strong>
+  {{ct5.showproductjson.description}}
+  </p>
+
+  <p>
+  <strong>Price:</strong>
+  {{ct5.showproductjson.price}} 
+  </p>
+  <p><a  href="/#/view6" ng-click="ct5.productId(ct5.currentId)">Edit</a></p>
+
   <div ng-include="'/home/infong.html'"></div>
+  <ul>
+    <li>Find my Rails controller in /app/controllers/products_controller.rb </li>
+  </ul>
 </div> 
