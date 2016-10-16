@@ -8,11 +8,10 @@ angular.module('myApp.services', [])
 	APP_OWNER: 'Tom Doe',
 	TEMPLATE_ONE_TITLE: 'Template 1',
 	TEMPLATE_TWO_TITLE: 'Template 2',
-	TEMPLATE_THREE_TITLE: 'Products',
-	TEMPLATE_FOUR_TITLE: 'New Product',
-	TEMPLATE_FIVE_TITLE: 'Show Product',
-	TEMPLATE_SIX_TITLE: 'Edit Product',
-	APP_DESCRIPTION: 'A Single Page Application with Ruby on Rails and Angular',
+	TEMPLATE_THREE_TITLE: 'Template 3 (Products)',
+	TEMPLATE_FOUR_TITLE: 'Template 4 (New Product)',
+	TEMPLATE_FIVE_TITLE: 'Template 5 (Show Product)',
+	TEMPLATE_SIX_TITLE: 'Template 6 (Edit Product)',
 	APP_VERSION: '1.0'
 
 })
@@ -81,14 +80,6 @@ angular.module('myApp.services', [])
 		makeFirstName: makeFirstName,
 		greeting: greeting,
 		activeNav: activeNav,
-
-
-		//		productAlt: {
-		//      data: {id: ''},
-		//			setId: function(arg) {
-		//				this.data.id = arg;
-		//			}
-		//		},
 
 		product: {
 
@@ -173,16 +164,7 @@ angular.module('myApp.services', [])
 		});
 	};
 
-	function productDataAsHtml () {
-		return $http({
-			method: 'GET',
-			url: '../products/'+functions.product.getId()
-		}).then(function successCallback(response) {
-			return response.data;
-		});
-	};
-
-	function productData () {
+	function productData() {
 		return $http({
 			method: 'GET',
 			url: '../products/'+functions.product.getId()+'.json'
@@ -200,22 +182,12 @@ angular.module('myApp.services', [])
 		});
 	};
 
-//	function htmlProducts() {
-//		return $http({
-//			method: 'GET',
-//			url: '../products.html'
-//		}).then(function successCallback(response) {
-//			return response.data;
-//		});
-//	}
 
 	return {
 		allProductsData: allProductsData,
 		newProductForm: newProductForm,
-		productDataAsHtml: productDataAsHtml,
 		productData: productData,
 		editProductForm: editProductForm
-		//htmlProducts: htmlProducts,
 	};
 
 }]);
