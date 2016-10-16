@@ -1,0 +1,6 @@
+<div class="template">
+  <p>Current Product Id: {{ct5.currentId}}</p>
+  <p>{{ct5.message}} </p> 
+  <div ng-include="'/home/infong.html'"></div>
+</div> 
+

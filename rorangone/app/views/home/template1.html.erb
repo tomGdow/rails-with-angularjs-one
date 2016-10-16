@@ -1,4 +1,40 @@
 <div class="template">
-	<h2>{{templateTitle}}</h2>
-	<p>{{message}}</p>
+
+  <h2>{{templateTitle}}</h2>
+
+  <p>Message: {{message}}</p>
+  <p>Look no scope! (A Better way to do things?): 
+  {{ct1.templateTitleAlt}}</p>
+
+  <div ng-include="'/home/infong.html'"></div>
+
+  <h3>An Example of the Use of Constants</h3>
+
+  <ul>
+    <li>First Name: {{ct1.appOwnerFirstName}}</li>
+    <li>Last Name: {{ct1.appOwnerLastName}}</li>
+  </ul>
+  <ul>
+    <li>Find my constants in 
+      /app/assets/javascripts/angular/ng_services.js</li>
+  </ul>
+
+  <h3>Directive Example</h3>
+
+  <mydiv>Hi, I am a directive!</mydiv>
+  <ul>
+    <li>Find my directive (mydiv) in 
+      /app/assets/javascripts/angular/ng_directives.js</li>
+  </ul>
+
+  <h3>Filters Example (dabbbleDate)</h3>
+  <ul>
+    <li>Unformatted Date One: {{ct1.exampleDates.dateOne}}</li>
+    <li>Formatted Date One: {{ct1.exampleDates.dateOne | dabbbleDate}}</li>
+    <li>Unformatted Date Two: {{ct1.exampleDates.dateTwo}}</li>
+    <li>Formatted Date Two: {{ct1.exampleDates.dateTwo | dabbbleDate}}</li>
+  </ul>
+  <ul>
+    <li>Find me (dabbleDate filter)  in /app/assets/javascripts/angular/ng_filters.js</li>
+  </ul>
 </div>
