@@ -1,6 +1,6 @@
 ### Single Page Application with Rails and AngularJS
 
-A single page application with full CRUD functionality developed with
+A single page application with full asynchronous CRUD functionality developed with
  Rails 5.0, Angular 1.3 and postgreSQL
 
 The structure of Angular part of the application is based on [Angular Seed](https://github.com/angular/angular-seed)
@@ -32,7 +32,6 @@ The structure of Angular part of the application is based on [Angular Seed](http
 
   The application struture for the 'single-page-app-with-crud' branch
 <pre>
-
 .
 ├── app
 │   ├── assets
@@ -94,9 +93,7 @@ The structure of Angular part of the application is based on [Angular Seed](http
 │           ├── _noticeBanner.html.erb
 │           ├── _product.json.jbuilder
 │           ├── show.html.erb
-│           ├── show.js.erb
 │           ├── show.json.jbuilder
-│           ├── _showPartial.html.erb
 │           ├── updateErr.js.erb
 │           └── update.js.erb
 ├── config.ru
@@ -105,7 +102,7 @@ The structure of Angular part of the application is based on [Angular Seed](http
 └── Rakefile
 </pre>
 
-## Notes
+## Branches
 
 To get the code, clone the repository and checkout the relevant branch.
 
@@ -113,10 +110,24 @@ To get the code, clone the repository and checkout the relevant branch.
 
     git checkout -b add-ng-functionality # single page app with extended Angular functionality
 
-    git checkout -b single-page-app-with-crud # (this version) single page application with full CRUD functionality 
+    git checkout -b single-page-app-with-crud # single page application with full CRUD functionality 
+
+    git checkout -b dry-crud-single-page-app # (this version) single page application with DRYer CRUD 
+
+**ng-rails-basic**
+
+> A basic single page application combining Rails and AngularJS (with postgreSQL as database)
+
+**add-ng-functionality**
+
+> A single page application with extended AngularJS functionality.
 
 **single-page-app-with-crud**
 
-This CRUD functionality implemented here is not very DRY. Products are shown
+> All Rails CRUD functionality done by AJAX (using AngularJS), but not in a  very DRY fashion. Products are shown
 by retrieving the data as both JSON and HTML, for example. 
+
+**dry-crud-single-page-app**
+
+> A single page application where  Rails CRUD functionality is implemented asynchronously in DRYer fashion. 
 
