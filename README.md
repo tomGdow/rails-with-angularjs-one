@@ -1,6 +1,7 @@
 ### Single Page Application with Rails and AngularJS
 
-A single page application developed with Rails 5.0, Angular 1.3 and postgreSQL
+A single page application with full CRUD functionality developed with
+ Rails 5.0, Angular 1.3 and postgreSQL
 
 The structure of Angular part of the application is based on [Angular Seed](https://github.com/angular/angular-seed)
 ### Brief log for the generation of the basic application
@@ -23,12 +24,15 @@ The structure of Angular part of the application is based on [Angular Seed](http
 
       Add routes for 'template1.html.erb' and 'template2.html.erb' (config/routes.rb)
   10. Get the code for this version by checking out the 'ng-rails-basic' branch
+  11. To implement CRUD functionality, add the following scaffold: 
 
+      rails generate scaffold Product name:string description:text price:float
 
 ### Application struture (abridged) 
 
-  The application struture for the 'add-ng-functionality' branch
+  The application struture for the 'single-page-app-with-crud' branch
 <pre>
+
 .
 ├── app
 │   ├── assets
@@ -42,7 +46,7 @@ The structure of Angular part of the application is based on [Angular Seed](http
 │   │   │   │   └── ng_services.js
 │   │   │   ├── application.js
 │   │   │   ├── cable.js
-│   │   │   └── home.coffee
+│   │   │   └── products.coffee
 │   │   └── stylesheets
 │   │       ├── application.scss
 │   │       ├── app.scss
@@ -50,12 +54,16 @@ The structure of Angular part of the application is based on [Angular Seed](http
 │   │       ├── home.scss
 │   │       ├── mixins.scss
 │   │       ├── navbar.scss
+│   │       ├── products.scss
+│   │       ├── scaffolds.scss
 │   │       └── variables.scss
 │   ├── controllers
 │   │   ├── application_controller.rb
-│   │   └── home_controller.rb
+│   │   ├── home_controller.rb
+│   │   └── products_controller.rb
 │   ├── models
-│   │   └── application_record.rb
+│   │   ├── application_record.rb
+│   │   └── product.rb
 │   └── views
 │       ├── home
 │       │   ├── index.html.erb
@@ -68,24 +76,47 @@ The structure of Angular part of the application is based on [Angular Seed](http
 │       │   ├── template5.html.erb
 │       │   ├── template5.html.erb~
 │       │   └── template6.html.erb
-│       └── layouts
-│           ├── application.html.erb
-│           ├── mailer.html.erb
-│           └── mailer.text.erb
+│       ├── layouts
+│       │   ├── application.html.erb
+│       │   ├── mailer.html.erb
+│       │   └── mailer.text.erb
+│       └── products
+│           ├── createErr.js.erb
+│           ├── create.js.erb
+│           ├── destroy.js.erb
+│           ├── edit.html.erb
+│           ├── _editPartial.html.erb
+│           ├── _form.html.erb
+│           ├── index.html.erb
+│           ├── index.json.jbuilder
+│           ├── new.html.erb
+│           ├── _newPartial.html.erb
+│           ├── _noticeBanner.html.erb
+│           ├── _product.json.jbuilder
+│           ├── show.html.erb
+│           ├── show.js.erb
+│           ├── show.json.jbuilder
+│           ├── _showPartial.html.erb
+│           ├── updateErr.js.erb
+│           └── update.js.erb
 ├── config.ru
 ├── Gemfile
 ├── Gemfile.lock
 └── Rakefile
-
 </pre>
 
 ## Notes
 
 To get the code, clone the repository and checkout the relevant branch.
 
-    git checkout -b ng-rails-basic  # basic app with 2 templates
+    git checkout -b ng-rails-basic  # basic single page application  with 2 templates
 
-    git checkout -b add-ng-functionality # this version (6 templates)
+    git checkout -b add-ng-functionality # single page app with extended Angular functionality
 
+    git checkout -b single-page-app-with-crud # (this version) single page application with full CRUD functionality 
 
+**single-page-app-with-crud**
+
+This CRUD functionality implemented here is not very DRY. Products are shown
+by retrieving the data as both JSON and HTML, for example. 
 
