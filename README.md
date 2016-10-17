@@ -25,7 +25,7 @@ The structure of the AngularJS part of the application is based on [Angular Seed
 
       (PostgreSQL does not need to be the database). 
 
-      `rails new rorangone -d postgresql` 
+      `rails new <app-name> -d postgresql` 
 
   2.  Add the [pry gem](https://github.com/rweng/pry-rails) to Gemfile (optional)
   3.  Generate a 'home' controller with a single action called 'index'
@@ -39,7 +39,7 @@ The structure of the AngularJS part of the application is based on [Angular Seed
   8.  Remove everything except '<%= yield %>' from app/views/layouts/application.html.erb
   9.  Route to 'home#index (config/routes.rb)
 
-      Add routes for 'template1.html.erb' and 'template2.html.erb' (config/routes.rb)
+  10. Add routes for 'template1.html.erb' and 'template2.html.erb' (config/routes.rb)
 
  To continue beyond the basic app, add the following scaffold
       to implement CRUD functionality: 
