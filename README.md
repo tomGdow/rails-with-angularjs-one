@@ -91,7 +91,6 @@ The structure of the AngularJS part of the application is based on [Angular Seed
 │       │   ├── template3.html.erb
 │       │   ├── template4.html.erb
 │       │   ├── template5.html.erb
-│       │   ├── template5.html.erb~
 │       │   └── template6.html.erb
 │       ├── layouts
 │       │   ├── application.html.erb
