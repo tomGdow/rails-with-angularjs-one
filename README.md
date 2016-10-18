@@ -73,7 +73,6 @@ The structure of Angular part of the application is based on [Angular Seed](http
 │       │   ├── template3.html.erb
 │       │   ├── template4.html.erb
 │       │   ├── template5.html.erb
-│       │   ├── template5.html.erb~
 │       │   └── template6.html.erb
 │       ├── layouts
 │       │   ├── application.html.erb
