@@ -1,3 +1,4 @@
+
 ### Single Page Application with Rails and AngularJS
 
 A 'skeleton' single-page [application](http://rangone.tomgdow.com)  with full asynchronous CRUD functionality, developed with
@@ -21,27 +22,32 @@ The structure of the AngularJS part of the application is based on [Angular Seed
 
   To generate a Rails/AngularJS app based on 'ng-rails-basic' 
 
-  1.  Generate a new rails app (here 'rorangone', with postgreSQL as database). 
+  1.  Generate a new rails app 
 
-      (PostgreSQL does not need to be the database). 
+      `rails new <app-name>`
+
+      Or, with postgreSQL as database:
 
       `rails new <app-name> -d postgresql` 
+  
+      (Here, 'rorangular', with postgreSQL) 
 
-  2.  Add the [pry gem](https://github.com/rweng/pry-rails) to Gemfile (optional)
-  3.  Generate a 'home' controller with a single action called 'index'
+  2.  Add the [angular-rails](https://rubygems.org/gems/angularjs-rails/) gem to Gemfile
+  3.  Add the [pry](https://github.com/rweng/pry-rails) gem to Gemfile (optional)
+  4.  Generate a 'home' controller with a single action called 'index'
 
       `rails generate controller Home index`
 
-  4.  Copy the 'angular' directory to app/assets/javascripts
-  5.  Replace (with the version given here) app/assets/javascripts/application.js
-  6.  Replace the 'stylesheets' directory in app/assets/stylesheets (optional)
-  7.  Replace the 'home' directory in app/views/
-  8.  Remove everything except '<%= yield %>' from app/views/layouts/application.html.erb
-  9.  Route to 'home#index (config/routes.rb)
+  5.  Copy the 'angular' directory to app/assets/javascripts
+  6.  Replace (with the version given here) app/assets/javascripts/application.js
+  7.  Replace the 'stylesheets' directory in app/assets/stylesheets (optional)
+  8.  Replace the 'home' directory in app/views/
+  9.  Remove everything except '<%= yield %>' from app/views/layouts/application.html.erb
+  10.  Route to 'home#index (config/routes.rb)
 
-  10. Add routes for 'template1.html.erb' and 'template2.html.erb' (config/routes.rb)
+  11. Add routes for 'template1.html.erb' and 'template2.html.erb' (config/routes.rb)
 
- To continue beyond the basic app, add the following scaffold
+ To continue beyond the basic app, add the following scaffold (or equivalent)
       to implement CRUD functionality: 
 
       rails generate scaffold Product name:string description:text price:float
