@@ -20,7 +20,7 @@ The structure of the AngularJS part of the application is based on [Angular Seed
        rails s
        localhost:3000   # from browser
 
-  To generate a Rails/AngularJS app based on 'ng-rails-basic' 
+  To generate a Rails/AngularJS app based on 'rails-ng-basic' 
 
   1.   Generate a new rails app 
 
@@ -129,7 +129,7 @@ The structure of the AngularJS part of the application is based on [Angular Seed
 
 To get the code, clone the repository and checkout the relevant branch.
 
-    git checkout -b ng-rails-basic  # basic single page application  with 2 templates
+    git checkout -b rails-ng-basic  # basic single page application  with 2 templates
 
     git checkout -b add-ng-functionality # single page app with extended Angular functionality
 
@@ -137,7 +137,7 @@ To get the code, clone the repository and checkout the relevant branch.
 
     git checkout -b dry-crud-single-page-app # (this version) single page application with DRYer CRUD 
 
-**ng-rails-basic**
+**rails-ng-basic**
 
 > A basic single page application combining Rails and AngularJS (with postgreSQL as database)
 
