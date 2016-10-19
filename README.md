@@ -22,13 +22,18 @@ The structure of the AngularJS part of the application is based on [Angular Seed
 
   To generate a Rails/AngularJS app based on 'ng-rails-basic' 
 
-  1.  Generate a new rails app (here 'rorangone', with postgreSQL as database). 
+  1.  Generate a new rails app 
 
-      (PostgreSQL does not need to be the database). 
+      `rails new <app-name>`
+
+      Or, with postgreSQL as database:
 
       `rails new <app-name> -d postgresql` 
+  
+      (Here, 'rorangular', with postgreSQL) 
 
-  2.  Add the [pry gem](https://github.com/rweng/pry-rails) to Gemfile (optional)
+  2.  Add the [angular-rails](https://rubygems.org/gems/angularjs-rails/) gem to Gemfile
+  2.  Add the [pry](https://github.com/rweng/pry-rails) gem to Gemfile (optional)
   3.  Generate a 'home' controller with a single action called 'index'
 
       `rails generate controller Home index`
@@ -42,7 +47,7 @@ The structure of the AngularJS part of the application is based on [Angular Seed
 
   10. Add routes for 'template1.html.erb' and 'template2.html.erb' (config/routes.rb)
 
- To continue beyond the basic app, add the following scaffold
+ To continue beyond the basic app, add the following scaffold (or equivalent)
       to implement CRUD functionality: 
 
       rails generate scaffold Product name:string description:text price:float
