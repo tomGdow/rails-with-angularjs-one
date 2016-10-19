@@ -2,20 +2,20 @@
 ### Single Page Application with Rails and AngularJS
 
 A 'skeleton' single-page [application](http://rangone.tomgdow.com)  with full asynchronous CRUD functionality, developed with
- Rails 5.0, Angular 1.3 and PostgreSQL
+ Rails 5.0, AngularJS 1.5.x  and PostgreSQL
 
 The structure of the AngularJS part of the application is based on [Angular Seed](https://github.com/angular/angular-seed)
 
 ### Deployment
 
-> rangone.tomgdow.com
+ rangone.tomgdow.com
 
 ### Brief log for the generation of a basic Rails/AngularJS App
 
   Clone the repository and check out the 'ng-rails-basic' branch
 
        git clone https://github.com/tomGdow/rails-with-angularjs-one.git
-       git checkout -b ng-rails-basic
+       git checkout rails-ng-basic
        cd rorangular
        rails s
        localhost:3000   # from browser
