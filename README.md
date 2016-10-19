@@ -8,14 +8,14 @@ The structure of the AngularJS part of the application is based on [Angular Seed
 
 ### Deployment
 
-> rangone.tomgdow.com
+ rangone.tomgdow.com
 
 ### Brief log for the generation of a basic Rails/AngularJS App
 
   Clone the repository and check out the 'ng-rails-basic' branch
 
        git clone https://github.com/tomGdow/rails-with-angularjs-one.git
-       git checkout -b ng-rails-basic
+       git checkout rails-ng-basic
        cd rorangular
        rails s
        localhost:3000   # from browser
