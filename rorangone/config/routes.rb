@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  resources :products
-	get 'home/index'
 
 	root to: 'home#index'
 	resources :products
+
 
 	get "home/template1"
 	get "home/template2"
@@ -14,6 +13,11 @@ Rails.application.routes.draw do
 
 	get "home/navbar"
 	get "home/infong"
+
+	get '/view1' => redirect('#view1')
+	get '/view2' => redirect('#view2')
+	get '/view3' => redirect('#view3')
+	get '/view4' => redirect('#view4')
 
 	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end 
