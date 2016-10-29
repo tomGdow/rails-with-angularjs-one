@@ -12,4 +12,10 @@ filter('interpolate', ['version', function(version) {
   return function (datestr, format) {
     return $filter('date')(Date.parse(datestr) || datestr, format);
   }
+})
+.filter('capitalize', function() {
+//From http://stackoverflow.com/a/30207330/499167
+    return function(input) {
+      return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
+    }
 });

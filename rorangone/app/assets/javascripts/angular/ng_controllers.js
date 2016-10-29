@@ -32,8 +32,8 @@ angular.module('myApp.controllers', ['ngSanitize'
 
 		}                         
 ])
-.controller('MyCtrl2', ['$scope', '$route', 'constants', 'allIrelandData','functions',
-		function ($scope, $route, constants, allIrelandData, functions) {
+.controller('MyCtrl2', ['$scope', '$route', 'constants', 'allIrelandData','functions','dowapi',
+		function ($scope, $route, constants, allIrelandData, functions, dowapi) {
 
 			var title=constants.TEMPLATE_TWO_TITLE;
 			$scope.routeData = $route.current;
@@ -41,11 +41,14 @@ angular.module('myApp.controllers', ['ngSanitize'
 			vm.message=functions.greeting(title);
 			vm.templateTitle = title;
 			vm.winners = allIrelandData.football;
+			dowapi.footballAllIrelands().then(function(data) {
+				vm.gaaData = data;
+			});
 
 		}
 ])
-.controller('MyCtrl3', ['$scope', '$route', 'functions', 'constants', '$sce','railsData',
-		function ($scope, $route, functions, constants, $sce, railsData) {
+.controller('MyCtrl3', ['$scope', '$route', 'functions', 'constants', '$sce','railsData','$http',
+		function ($scope, $route, functions, constants, $sce, railsData, $http) {
 
 			// Products
 			var title=constants.TEMPLATE_THREE_TITLE;

@@ -1,25 +1,50 @@
 <div class="template">
 
-  <h2>{{ct2.templateTitle}}</h2>
+	<h2>{{ct2.templateTitle}}</h2>
 
-  <p>Message: {{ct2.message}}</p>
-  <div ng-include="'/home/infong.html'"></div>
-  <h3>An Exmaple of the Use of Services</h3>
+	<p>Message: {{ct2.message}}</p>
+	<div ng-include="'/home/infong.html'"></div>
+	<h3>An Exmaple of the Use of Services</h3>
 
-  <p>An example of ng-repeat, ordered by name</p>
-  <ul>
-    <li ng-repeat = "county in ct2.winners | orderBy: 'name' "> 
-      {{county.name}} have won {{county.winners}} All-Ireland's
-    </li>
-  </ul>
+	<p>An example of ng-repeat, ordered alphabetically</p>
+	<table>
+		<tr>
+			<th>County</th>
+			<th>Wins</th>
+		</tr>
+		<tr ng-repeat="c in ct2.winners | orderBy: 'name' ">
+			<td>{{ c.name }}</td>
+			<td>{{ c.winners }}</td>
+		</tr>
+	</table>
 
-  <p>An example of ng-repeat, ordered by number of wins</p>
-  <ul>
-    <li ng-repeat = "county in ct2.winners | orderBy: -'winners' "> 
-      {{county.name}} have won {{county.winners}} All-Ireland's
-    </li>
-  </ul>
-  <ul>
-    <li>find my data in /app/assets/javascripts/angular/ng_services.js</li>
-  </ul>
+	<p>An example of ng-repeat, ordered by number of wins</p>
+	<table>
+		<tr>
+			<th>County</th>
+			<th>Wins</th>
+		</tr>
+		<tr ng-repeat="c in ct2.winners | orderBy: '-winners' ">
+			<td>{{ c.name }}</td>
+			<td>{{ c.winners }}</td>
+		</tr>
+	</table>
+		<p>find my data in /app/assets/javascripts/angular/ng_services.js</p>
+	</ul>
+	<h3>Get Data from External Api</h3>
+	<table>
+		<tr>
+			<th>County</th>
+			<th>Wins</th>
+			<th>First</th>
+			<th>Last</th>
+		</tr>
+		<tr ng-repeat="n in ct2.gaaData | orderBy: '-wintotal' ">
+			<td>{{ n.county | capitalize }}</td>
+			<td>{{ n.wintotal }}</td>
+			<td>{{ n.winfirst }}</td>
+			<td>{{ n.winlast }}</td>
+		</tr>
+	</table>
+	<p>Data obtained externally from <a href="http://dowapi.tomgdow.com/football_all_irelands.json">http://dowapi.tomgdow.com/football_all_irelands.json</a></p>
 </div> 

@@ -190,4 +190,21 @@ angular.module('myApp.services', [])
 		editProductForm: editProductForm
 	};
 
+}])
+.factory('dowapi', ['$http','functions',function($http,functions) {
+
+	function footballAllIrelands() {
+		return $http({
+			method: 'GET',
+			url: 'http://dowapi.tomgdow.com/football_all_irelands.json'
+		}).then(function successCallback(response) {
+			return response.data;
+		});
+	};
+
+
+	return {
+		footballAllIrelands: footballAllIrelands,
+	};
+
 }]);
