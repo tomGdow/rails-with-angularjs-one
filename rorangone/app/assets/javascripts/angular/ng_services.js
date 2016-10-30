@@ -202,9 +202,19 @@ angular.module('myApp.services', [])
 		});
 	};
 
+	function hurlingAllIrelands() {
+		return $http({
+			method: 'GET',
+			url: 'http://dowapi.tomgdow.com/hurling_all_irelands.json'
+		}).then(function successCallback(response) {
+			return response.data;
+		});
+	};
+
 
 	return {
 		footballAllIrelands: footballAllIrelands,
+		hurlingAllIrelands: hurlingAllIrelands,
 	};
 
 }]);

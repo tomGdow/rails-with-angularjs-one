@@ -32,6 +32,7 @@
 		<p>find my data in /app/assets/javascripts/angular/ng_services.js</p>
 	</ul>
 	<h3>Get Data from External Api</h3>
+	<h4>Football All-Ireland Winners</h4>
 	<table>
 		<tr>
 			<th>County</th>
@@ -47,4 +48,19 @@
 		</tr>
 	</table>
 	<p>Data obtained externally from <a href="http://dowapi.tomgdow.com/football_all_irelands.json">http://dowapi.tomgdow.com/football_all_irelands.json</a></p>
+	<h4>Hurling All-Ireland Winners</h4>
+	<table>
+		<tr>
+			<th>County</th>
+			<th>Wins</th>
+			<th>First</th>
+			<th>Last</th>
+		</tr>
+		<tr ng-repeat="n in ct2.hurlingData | orderBy: '-wintotal' ">
+			<td>{{ n.county | capitalize }}</td>
+			<td>{{ n.wintotal }}</td>
+			<td>{{ n.winfirst }}</td>
+			<td>{{ n.winlast }}</td>
+		</tr>
+	</table>
 </div> 

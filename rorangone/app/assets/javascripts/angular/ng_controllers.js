@@ -44,6 +44,9 @@ angular.module('myApp.controllers', ['ngSanitize'
 			dowapi.footballAllIrelands().then(function(data) {
 				vm.gaaData = data;
 			});
+			dowapi.hurlingAllIrelands().then(function(data) {
+				vm.hurlingData = data;
+			});
 
 		}
 ])
