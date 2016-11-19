@@ -15,11 +15,17 @@ config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/view3',
 			{templateUrl: 'home/template3.html',  controller: 'MyCtrl3', controllerAs: 'ct3'}); //products 
 	$routeProvider.when('/view4', 
-			{templateUrl: 'home/template4.html',  controller: 'MyCtrl4', controllerAs: 'ct4'}); // products-new
+			{templateUrl: 'home/template4.html',  controller: 'MyCtrl4', controllerAs: 'ct4'}); // product-new
 	$routeProvider.when('/view5', 
-			{templateUrl: 'home/template5.html',  controller: 'MyCtrl5', controllerAs: 'ct5'}); // products-show
+			{templateUrl: 'home/template5.html',  controller: 'MyCtrl5', controllerAs: 'ct5'}); // product-show
 	$routeProvider.when('/view6', 
-			{templateUrl: 'home/template6.html',  controller: 'MyCtrl6', controllerAs: 'ct6'}); // products-edit
+			{templateUrl: 'home/template6.html',  controller: 'MyCtrl6', controllerAs: 'ct6'}); // product-edit
+	$routeProvider.when('/view7', 
+			{templateUrl: 'home/template7.html',  controller: 'MyCtrl3', controllerAs: 'ct3'}); // products (sport scope)
+	$routeProvider.when('/view8', 
+			{templateUrl: 'home/template8.html',  controller: 'MyCtrl3', controllerAs: 'ct3'}); // products (outdoor scope)
+	$routeProvider.when('/view9', 
+			{templateUrl: 'home/template9.html',  controller: 'MyCtrl3', controllerAs: 'ct3'}); // products (household scope)
 	$routeProvider.otherwise({redirectTo: '/view1'});
 }]);
 

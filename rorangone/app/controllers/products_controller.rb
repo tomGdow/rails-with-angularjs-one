@@ -67,6 +67,18 @@ class ProductsController < ApplicationController
 		end
 	end
 
+	def sport
+		@sport = Product.sport.all
+	end
+
+	def outdoor
+		@outdoor = Product.outdoor.all
+	end
+
+	def household
+		@household = Product.household.all
+	end
+
 	private
 	# Use callbacks to share common setup or constraints between actions.
 	def set_product
@@ -75,6 +87,6 @@ class ProductsController < ApplicationController
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def product_params
-		params.require(:product).permit(:name, :description, :price)
+		params.require(:product).permit(:name, :category, :description, :price)
 	end
 end

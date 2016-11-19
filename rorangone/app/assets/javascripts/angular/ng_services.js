@@ -8,7 +8,10 @@ angular.module('myApp.services', [])
 	APP_OWNER: 'Tom Doe',
 	TEMPLATE_ONE_TITLE: 'Template 1',
 	TEMPLATE_TWO_TITLE: 'Template 2',
-	TEMPLATE_THREE_TITLE: 'Template 3 (Products)',
+	TEMPLATE_THREE_PRODUCT: 'Template 3 (Products)',
+	TEMPLATE_THREE_OUTDOOR: 'Template 8 (Outdoor)',
+	TEMPLATE_THREE_SPORT: 'Template 7 (Sport)',
+	TEMPLATE_THREE_HOUSEHOLD: 'Template 9 (Household)',
 	TEMPLATE_FOUR_TITLE: 'Template 4 (New Product)',
 	TEMPLATE_FIVE_TITLE: 'Template 5 (Show Product)',
 	TEMPLATE_SIX_TITLE: 'Template 6 (Edit Product)',
@@ -50,6 +53,9 @@ angular.module('myApp.services', [])
 			"nav4" : {"url": "view4", "class": "viewfour"},
 			"nav5" : {"url": "view5", "class": "viewalt"},
 			"nav6" : {"url": "view6", "class": "viewalt"},
+			"nav7" : {"url": "view7", "class": "viewalt"},
+			"nav8" : {"url": "view8", "class": "viewalt"},
+			"nav8" : {"url": "view9", "class": "viewalt"}
 		}; 
 
 		switch (true) {
@@ -70,6 +76,15 @@ angular.module('myApp.services', [])
 				break;
 			case activeHelper(RegExp(data.nav6.url)):
 				return  data.nav5.class;
+				break;
+			case activeHelper(RegExp(data.nav7.url)):
+				return  data.nav7.class;
+				break;
+			case activeHelper(RegExp(data.nav8.url)):
+				return  data.nav8.class;
+				break;
+			case activeHelper(RegExp(data.nav9.url)):
+				return  data.nav9.class;
 				break;
 			default:
 				return data.nav1.class;
@@ -146,48 +161,47 @@ angular.module('myApp.services', [])
 })
 .factory('railsData', ['$http','functions',function($http,functions) {
 
-	function allProductsData() {
+	function retrieveJson(arg) {
 		return $http({
 			method: 'GET',
-			url: '../products.json'
+			url: '../' + arg +'.json'
 		}).then(function successCallback(response) {
 			return response.data;
 		});
 	};
 
-	function newProductForm() {
+	function retrieveHtml(arg) {
 		return $http({
 			method: 'GET',
-			url: '../products/new.html'
+			url: '../' + arg 
 		}).then(function successCallback(response) {
 			return response.data;
 		});
 	};
 
-	function productData() {
+	function fetchJson(arg) {
 		return $http({
 			method: 'GET',
-			url: '../products/'+functions.product.getId()+'.json'
+			url: '../' + arg + '/' + functions.product.getId()+'.json'
 		}).then(function successCallback(response) {
 			return response.data;
 		});
 	};
 
-	function editProductForm () {
+	function fetchHtml (arg1, arg2) {
 		return $http({
 			method: 'GET',
-			url: '../products/'+functions.product.getId()+'/edit'
+			url: '../' + arg1 + '/' + functions.product.getId() + '/' + arg2
 		}).then(function successCallback(response) {
 			return response.data;
 		});
 	};
-
 
 	return {
-		allProductsData: allProductsData,
-		newProductForm: newProductForm,
-		productData: productData,
-		editProductForm: editProductForm
+    retrieveJson: retrieveJson,
+    retrieveHtml: retrieveHtml,
+    fetchJson: fetchJson,
+		fetchHtml: fetchHtml,
 	};
 
 }])
@@ -210,7 +224,6 @@ angular.module('myApp.services', [])
 			return response.data;
 		});
 	};
-
 
 	return {
 		footballAllIrelands: footballAllIrelands,

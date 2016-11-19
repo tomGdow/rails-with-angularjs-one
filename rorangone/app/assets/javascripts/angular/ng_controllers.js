@@ -53,20 +53,35 @@ angular.module('myApp.controllers', ['ngSanitize'
 .controller('MyCtrl3', ['$scope', '$route', 'functions', 'constants', '$sce','railsData','$http',
 		function ($scope, $route, functions, constants, $sce, railsData, $http) {
 
-			// Products
-			var title=constants.TEMPLATE_THREE_TITLE;
+			// Products and scoped categories
+			var title_product=constants.TEMPLATE_THREE_PRODUCT;
+			var title_sport=constants.TEMPLATE_THREE_SPORT;
+			var title_outdoor=constants.TEMPLATE_THREE_OUTDOOR;
+			var title_household=constants.TEMPLATE_THREE_HOUSEHOLD;
+
 			$scope.routeData = $route.current;
 			var vm = this;
-			vm.message=functions.greeting(title);
-			vm.templateTitle = title;
-			railsData.allProductsData().then(function(data) {
-				vm.productsJson = data;
+			vm.title_product = title_product;
+			vm.title_sport = title_sport;
+			vm.title_outdoor = title_outdoor;
+			vm.title_household = title_household;
+
+			railsData.retrieveJson('products').then(function(data) {
+				vm.products = data;
 			});
+			railsData.retrieveJson('products/sport').then(function(data) {
+				vm.sport = data;
+			});
+			railsData.retrieveJson('products/outdoor').then(function(data) {
+				vm.outdoor = data;
+			});
+			railsData.retrieveJson('products/household').then(function(data) {
+				vm.household = data;
+			});
+
 			vm.productId = function (arg) {
 				functions.product.setId(arg);
-				console.log(arg)
 			} 
-
 		}
 ])
 .controller('MyCtrl4', ['$scope', '$route', 'functions', 'constants', '$sce', 'railsData',
@@ -78,7 +93,7 @@ angular.module('myApp.controllers', ['ngSanitize'
 			$scope.routeData = $route.current;
 			var vm = this;
 			vm.message=functions.greeting(title);
-			railsData.newProductForm().then(function(data) {
+			railsData.retrieveHtml('products/new').then(function(data) {
 				vm.newproduct = $sce.trustAsHtml(data);
 			});
 
@@ -94,8 +109,8 @@ angular.module('myApp.controllers', ['ngSanitize'
 			var vm = this;
 			vm.message=functions.greeting(title);
 			vm.templateTitle = title;
-			railsData.productData().then(function(data) {
-				vm.showproductjson = data;
+			railsData.fetchJson('products').then(function(data) {
+				vm.show = data;
 			});
 			vm.currentId = functions.product.getId();
 
@@ -108,8 +123,8 @@ angular.module('myApp.controllers', ['ngSanitize'
 		$scope.routeData = $route.current;
 		var vm = this;
 		vm.message=functions.greeting(title);
-		railsData.editProductForm().then(function(data) {
-			vm.editproduct = $sce.trustAsHtml(data);
+		railsData.fetchHtml('products','edit').then(function(data) {
+			vm.edit  = $sce.trustAsHtml(data);
 		});
 		vm.currentId = functions.product.getId();
 

@@ -1,7 +1,7 @@
 <div class="template">
   <p id="flash" class="flash"></p>
   <div ng-include="'/home/subnavbar.html'"></div>
-  <h2>{{ct3.title_product}}</h2>
+  <h2>{{ct3.title_household}}</h2>
   <table>
     <thead>
       <tr>
@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="p in ct3.products">
+      <tr ng-repeat="p in ct3.household">
         <td>{{ p.name }}</td>
         <td>{{ p.description }}</td>
         <td>{{ p.category }}</td>
@@ -28,8 +28,6 @@
       </tr>
     </tbody>
   </table>
-  <div>
-  </div>
 
   <div ng-include="'/home/infong.html'"></div>
   <ul>
