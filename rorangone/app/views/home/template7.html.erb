@@ -2,33 +2,7 @@
   <p id="flash" class="flash"></p>
   <div ng-include="'/home/subnavbar.html'"></div>
   <h2>{{ct3.title_sport}}</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Category</th>
-        <th>Price</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="p in ct3.sport">
-        <td>{{ p.name }}</td>
-        <td>{{ p.description }}</td>
-        <td>{{ p.category }}</td>
-        <td>{{ p.price }}</td>
-        <td><a href="/#/view5" ng-click="ct3.productId(p.id)">Show</a></td>
-        <td><a href="/#/view6" ng-click="ct3.productId(p.id)">Edit</a></td>
-        <td>
-          <a rel="nofollow" data-remote="true" data-method="delete" data-confirm="Are you sure?" href="/products/{{p.id}}">
-            Destroy
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
+  <my-table template='tablep' collection="ct3.sport"></my-table>
   <div ng-include="'/home/infong.html'"></div>
   <ul>
     <li>Find my Rails controller in /app/controllers/products_controller.rb </li>

@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 	get "home/template8"
 	get "home/template9"
 
+	get "home/tablep"
+
 	get "home/navbar"
 	get "home/subnavbar"
 	get "home/infong"
@@ -32,5 +34,5 @@ Rails.application.routes.draw do
 	get '/sport' => redirect('#view7')
 	get '/outdoor' => redirect('#view8')
 	get '/household' => redirect('#view9')
-	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 end 
