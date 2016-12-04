@@ -12,7 +12,6 @@ The structure of the AngularJS part of the application is based on [Angular Seed
 
 ### Application struture (abridged) 
 
-  The application struture for branch 'master'
 <pre>
 .
 ├── app
@@ -89,14 +88,6 @@ To get the code, clone the repository and checkout the relevant branch.
 
     git checkout  rails-ng-basic  # basic single page application  with 2 templates
 
-    git checkout  add-ng-functionality # single page app with extended Angular functionality
-
-    git checkout  single-page-app-with-crud # single page application with full CRUD functionality 
-
-    git checkout  dry-crud-single-page-app # single page application with DRYer CRUD 
-```
-git checkout dowapi # (this version) single page application with CRUD using data from external API
-```
 
 **rails-ng-basic**
 
@@ -119,9 +110,13 @@ git checkout dowapi # (this version) single page application with CRUD using dat
 
 > A single page application with CRUD using data from an external API ([dowapi](http://dowapi.tomgdow.com))
 
+**directive**
+  
+  >An AngularJS table directive is added to make implementation of Rails scopes DRYer
+
 ## Notes
 
-    Angular.version.full    # (from Browser console)
+    angular.version.full    # (from Browser console)
 
 > "1.5.6"
 
